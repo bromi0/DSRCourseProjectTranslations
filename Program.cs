@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<MainDbContext>(
-       options => options.UseSqlServer(builder.Configuration.GetConnectionString("MainContext")));
+       options => options.UseSqlServer(
+           builder.Configuration.GetConnectionString("MainContext")));
 
 // Swagger
 
