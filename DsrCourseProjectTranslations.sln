@@ -3,7 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DsrCourseProjectTranslations", "DsrCourseProjectTranslations.csproj", "{BB2F12FE-1927-4FCC-992D-7807497351CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Systems", "Systems", "{CD03EF97-47DC-49C8-BFFA-5C1985AE06A6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{0EF09816-9634-497D-89F4-0A05F008D6E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E64BDBBD-D165-4B2B-80DA-CE117F89C9FC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{60FD881F-D438-48B5-83F2-1253720ACD86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DsrCourseProject.Api", "Systems\Api\DsrCourseProject.Api\DsrCourseProject.Api.csproj", "{ECF4AA40-9620-47BB-A0A6-3531965CE9D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DsrCourseProject.Api.Settings", "Systems\Api\DsrCourseProject.Api.Settings\DsrCourseProject.Api.Settings.csproj", "{F75B4493-8674-4BE4-9EE0-71990BD636F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Common", "Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj", "{78F7712E-12B7-4F93-9A57-A7E597189118}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +23,28 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BB2F12FE-1927-4FCC-992D-7807497351CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BB2F12FE-1927-4FCC-992D-7807497351CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BB2F12FE-1927-4FCC-992D-7807497351CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BB2F12FE-1927-4FCC-992D-7807497351CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF4AA40-9620-47BB-A0A6-3531965CE9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF4AA40-9620-47BB-A0A6-3531965CE9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF4AA40-9620-47BB-A0A6-3531965CE9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF4AA40-9620-47BB-A0A6-3531965CE9D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75B4493-8674-4BE4-9EE0-71990BD636F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75B4493-8674-4BE4-9EE0-71990BD636F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75B4493-8674-4BE4-9EE0-71990BD636F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75B4493-8674-4BE4-9EE0-71990BD636F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78F7712E-12B7-4F93-9A57-A7E597189118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78F7712E-12B7-4F93-9A57-A7E597189118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78F7712E-12B7-4F93-9A57-A7E597189118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78F7712E-12B7-4F93-9A57-A7E597189118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E64BDBBD-D165-4B2B-80DA-CE117F89C9FC} = {CD03EF97-47DC-49C8-BFFA-5C1985AE06A6}
+		{60FD881F-D438-48B5-83F2-1253720ACD86} = {CD03EF97-47DC-49C8-BFFA-5C1985AE06A6}
+		{ECF4AA40-9620-47BB-A0A6-3531965CE9D5} = {E64BDBBD-D165-4B2B-80DA-CE117F89C9FC}
+		{F75B4493-8674-4BE4-9EE0-71990BD636F4} = {E64BDBBD-D165-4B2B-80DA-CE117F89C9FC}
+		{78F7712E-12B7-4F93-9A57-A7E597189118} = {0EF09816-9634-497D-89F4-0A05F008D6E7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9684AE61-1CB6-400A-9CCD-157BB6173E40}
