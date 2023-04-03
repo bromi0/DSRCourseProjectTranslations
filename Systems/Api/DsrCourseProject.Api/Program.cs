@@ -1,4 +1,5 @@
 using DsrCourseProjectTranslations.Data;
+using DSRNetSchool.Api.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,8 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<MainDbContext>(
-       options => options.UseSqlServer(
-           builder.Configuration.GetConnectionString("MainContext")));
+	   options => options.UseSqlServer(
+		   builder.Configuration.GetConnectionString("MainContext")));
+
+// Logging
+
+builder.AddAppLogger();
 
 // Swagger
 
@@ -26,8 +31,8 @@ app.UseAuthorization();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+	app.UseSwagger();
+	app.UseSwaggerUI();
 }
 
 app.MapControllers();
