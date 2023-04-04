@@ -1,4 +1,4 @@
-﻿namespace DSRNetSchool.Api.Configuration;
+﻿namespace DSRCourseProject.Api.Configuration;
 
 using Serilog;
 

@@ -1,5 +1,5 @@
+using DSRCourseProject.Api.Configuration;
 using DsrCourseProjectTranslations.Data;
-using DSRNetSchool.Api.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
