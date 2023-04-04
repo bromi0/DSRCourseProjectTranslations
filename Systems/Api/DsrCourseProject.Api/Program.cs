@@ -16,6 +16,8 @@ builder.Services.AddDbContext<MainDbContext>(
 
 builder.AddAppLogger();
 
+builder.Services.AddAppHealthChecks(builder.Configuration);
+
 // Swagger
 
 builder.Services.AddEndpointsApiExplorer();
@@ -28,6 +30,8 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseAppHealthChecks();
 
 if (app.Environment.IsDevelopment())
 {
