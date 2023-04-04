@@ -4,11 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+var services = builder.Services;
+
 // Add services to the container.
 
-builder.Services.AddControllers();
-
-builder.Services.AddDbContext<MainDbContext>(
+services.AddControllers();
+services.AddDbContext<MainDbContext>(
 	   options => options.UseSqlServer(
 		   builder.Configuration.GetConnectionString("MainContext")));
 
@@ -16,7 +17,9 @@ builder.Services.AddDbContext<MainDbContext>(
 
 builder.AddAppLogger();
 
-builder.Services.AddAppHealthChecks(builder.Configuration);
+services.AddHttpContextAccessor();
+services.AddAppCors();
+services.AddAppHealthChecks(builder.Configuration);
 
 // Swagger
 
@@ -31,6 +34,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
+app.UseAppCors();
 app.UseAppHealthChecks();
 
 if (app.Environment.IsDevelopment())
