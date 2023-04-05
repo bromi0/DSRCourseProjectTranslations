@@ -1,6 +1,5 @@
 using DSRCourseProject.Api.Configuration;
 using DsrCourseProjectTranslations.Data;
-using DSRNetSchool.Api.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,8 +25,7 @@ services.AddAppVersioning();
 
 // Swagger
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddAppSwagger();
 
 var app = builder.Build();
 
@@ -43,8 +41,7 @@ app.UseAppHealthChecks();
 
 if (app.Environment.IsDevelopment())
 {
-	app.UseSwagger();
-	app.UseSwaggerUI();
+	app.UseAppSwagger();
 }
 
 app.MapControllers();

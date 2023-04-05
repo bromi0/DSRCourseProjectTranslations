@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DsrCourseProject.Api</name>
+    </assembly>
+    <members>
+        <member name="T:DSRCourseProject.Api.Configuration.CorsConfiguration">
+            <summary>
+            CORS configuration
+            </summary>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.CorsConfiguration.AddAppCors(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add CORS
+            </summary>
+            <param name="services">Services collection</param>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.CorsConfiguration.UseAppCors(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Use service
+            </summary>
+            <param name="app">Application</param>
+        </member>
+        <member name="T:DSRCourseProject.Api.Configuration.LoggerConfiguration">
+            <summary>
+            Logger Configuration
+            </summary>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.LoggerConfiguration.AddAppLogger(Microsoft.AspNetCore.Builder.WebApplicationBuilder)">
+            <summary>
+            Add logger
+            </summary>
+        </member>
+        <member name="T:DSRCourseProject.Api.Configuration.SwaggerConfiguration">
+            <summary>
+            Swagger configuration
+            </summary>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.SwaggerConfiguration.AddAppSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add OpenAPI for API
+            </summary>
+            <param name="services">Services collection</param>
+            <param name="mainSettings"></param>
+            <param name="swaggerSettings"></param>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.SwaggerConfiguration.UseAppSwagger(Microsoft.AspNetCore.Builder.WebApplication)">
+            <summary>
+            Start OpenAPI UI
+            </summary>
+            <param name="app">Web application</param>
+        </member>
+        <member name="T:DSRCourseProject.Api.Configuration.VersioningConfiguration">
+            <summary>
+            Versioning configuration
+            </summary>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.VersioningConfiguration.AddAppVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add version support for API
+            </summary>
+            <param name="services">Services collection</param>
+        </member>
+        <member name="T:DsrCourseProjectTranslations.Data.Entities.Language">
+            <summary>
+            Language, entity to use as source and target in the Request
+            </summary>
+        </member>
+        <member name="T:DsrCourseProjectTranslations.Data.Entities.Tag">
+            <summary>
+            Every Request for translation can have some tags, to make searching for them easier.
+            </summary>
+        </member>
+        <member name="T:DsrCourseProjectTranslations.Data.Entities.TranslationRequest">
+            <summary>
+            Request for the translation. Contains the links to source and target languages, 
+            the text of the request, and the link to the author (user).
+            Optional list of tags.
+            </summary>
+        </member>
+        <member name="T:DsrCourseProjectTranslations.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:DsrCourseProjectTranslations.Migrations.TranslationAnswerCreated">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.TranslationAnswerCreated.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.TranslationAnswerCreated.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:DsrCourseProjectTranslations.Migrations.TranslationAnswerCreated.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
