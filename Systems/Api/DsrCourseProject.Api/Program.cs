@@ -1,5 +1,6 @@
 using DSRCourseProject.Api.Configuration;
 using DsrCourseProjectTranslations.Data;
+using DSRNetSchool.Api.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,8 @@ services.AddHttpContextAccessor();
 services.AddAppCors();
 services.AddAppHealthChecks(builder.Configuration);
 
+services.AddAppVersioning();
+
 // Swagger
 
 builder.Services.AddEndpointsApiExplorer();
@@ -36,6 +39,7 @@ app.UseAuthorization();
 
 app.UseAppCors();
 app.UseAppHealthChecks();
+
 
 if (app.Environment.IsDevelopment())
 {
