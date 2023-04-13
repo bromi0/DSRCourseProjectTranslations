@@ -8,7 +8,6 @@ var services = builder.Services;
 
 // Add services to the container.
 
-services.AddControllers();
 services.AddDbContext<MainDbContext>(
 	   options => options.UseSqlServer(
 		   builder.Configuration.GetConnectionString("MainContext")));
@@ -25,15 +24,15 @@ services.AddAppVersioning();
 
 // Swagger
 
-builder.Services.AddAppSwagger();
+services.AddAppSwagger();
+
+services.AddAppControllerAndViews();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+// app.UseHttpsRedirection();
 
 app.UseAppCors();
 app.UseAppHealthChecks();
@@ -44,6 +43,6 @@ if (app.Environment.IsDevelopment())
 	app.UseAppSwagger();
 }
 
-app.MapControllers();
+app.UseAppControllerAndViews();
 
 app.Run();
