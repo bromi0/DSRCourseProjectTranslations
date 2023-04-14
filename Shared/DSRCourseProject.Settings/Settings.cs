@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 public abstract class Settings
 {
-    public static T Load<T>(string key, IConfiguration? configuration)
+    public static T Load<T>(string key, IConfiguration? configuration = null)
     {
         var settings = Activator.CreateInstance<T>();
 

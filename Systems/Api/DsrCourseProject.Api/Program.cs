@@ -1,4 +1,8 @@
+using DSRCourseProject.Api;
 using DSRCourseProject.Api.Configuration;
+using DSRCourseProject.Api.Settings;
+using DSRCourseProject.Services.Settings;
+using DSRCourseProject.Settings;
 using DsrCourseProjectTranslations.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,8 +13,8 @@ var services = builder.Services;
 // Add services to the container.
 
 services.AddDbContext<MainDbContext>(
-	   options => options.UseSqlServer(
-		   builder.Configuration.GetConnectionString("MainContext")));
+       options => options.UseSqlServer(
+           builder.Configuration.GetConnectionString("MainContext")));
 
 // Logging
 
@@ -24,11 +28,14 @@ services.AddAppVersioning();
 
 // Swagger
 
-services.AddAppSwagger();
-
 services.AddAppControllerAndViews();
+services.RegisterAppServices();
+services.AddApiSpecialSettings();
+
+services.AddAppSwagger(Settings.Load<MainSettings>("Main"), Settings.Load<SwaggerSettings>("Swagger"));
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 
@@ -41,7 +48,7 @@ app.UseAppControllerAndViews();
 
 if (app.Environment.IsDevelopment())
 {
-	app.UseAppSwagger();
+    app.UseAppSwagger();
 }
 
 

@@ -46,7 +46,7 @@
             Swagger configuration
             </summary>
         </member>
-        <member name="M:DSRCourseProject.Api.Configuration.SwaggerConfiguration.AddAppSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+        <member name="M:DSRCourseProject.Api.Configuration.SwaggerConfiguration.AddAppSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection,DSRCourseProject.Services.Settings.MainSettings,DSRCourseProject.Services.Settings.SwaggerSettings)">
             <summary>
             Add OpenAPI for API
             </summary>
