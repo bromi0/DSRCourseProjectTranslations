@@ -37,12 +37,12 @@ var app = builder.Build();
 app.UseAppCors();
 app.UseAppHealthChecks();
 
+app.UseAppControllerAndViews();
 
 if (app.Environment.IsDevelopment())
 {
 	app.UseAppSwagger();
 }
 
-app.UseAppControllerAndViews();
 
 app.Run();

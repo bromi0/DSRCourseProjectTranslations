@@ -17,8 +17,10 @@ public static class ControllerAndViewsConfiguration
 		return services;
 	}
 
-	public static IEndpointRouteBuilder UseAppControllerAndViews(this IEndpointRouteBuilder app)
+	public static WebApplication UseAppControllerAndViews(this WebApplication app)
 	{
+		app.UseStaticFiles();
+
 		app.MapRazorPages();
 		app.MapControllers();
 
