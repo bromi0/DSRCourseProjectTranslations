@@ -1,5 +1,6 @@
 ﻿namespace DSRCourseProject.Api;
 
+using DSRCourseProject.Api.Settings;
 using DSRCourseProject.Services.Settings;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,7 +12,8 @@ public static class Bootstrapper
             .AddMainSettings()
             .AddSwaggerSettings()
             .AddIdentitySettings()
-            /*.AddApiSpecialSettings()
+            .AddApiSpecialSettings()
+            /*
             .AddBookService()
             .AddUserAccountService()
             .AddCache()

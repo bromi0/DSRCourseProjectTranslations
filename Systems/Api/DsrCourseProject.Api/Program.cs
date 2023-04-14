@@ -1,6 +1,5 @@
 using DSRCourseProject.Api;
 using DSRCourseProject.Api.Configuration;
-using DSRCourseProject.Api.Settings;
 using DSRCourseProject.Services.Settings;
 using DSRCourseProject.Settings;
 using DsrCourseProjectTranslations.Data;
@@ -30,7 +29,6 @@ services.AddAppVersioning();
 
 services.AddAppControllerAndViews();
 services.RegisterAppServices();
-services.AddApiSpecialSettings();
 
 services.AddAppSwagger(Settings.Load<MainSettings>("Main"), Settings.Load<SwaggerSettings>("Swagger"));
 
