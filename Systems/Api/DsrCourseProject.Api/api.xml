@@ -21,6 +21,16 @@
             </summary>
             <param name="app">Application</param>
         </member>
+        <member name="T:DSRCourseProject.Api.Configuration.HealthCheckConfiguration">
+            <summary>
+            Extension configuring Health checks for a project.
+            </summary>
+        </member>
+        <member name="T:DSRCourseProject.Api.Configuration.SelfHealthCheck">
+            <summary>
+            Example health check for solution
+            </summary>
+        </member>
         <member name="T:DSRCourseProject.Api.Configuration.LoggerConfiguration">
             <summary>
             Logger Configuration
