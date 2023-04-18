@@ -413,4 +413,4 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-/Systems/Api/DsrCourseProject.Api/appsettings.development.json
+/Systems/Api/DSRCourseProject.Api/appsettings.development.json

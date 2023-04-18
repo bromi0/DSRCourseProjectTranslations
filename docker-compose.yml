@@ -12,7 +12,7 @@ services:
     image: ${DOCKER_REGISTRY-}dsrcourseprojectapi
     build:
       context: .
-      dockerfile: Systems/Api/DsrCourseProject.Api/Dockerfile
+      dockerfile: Systems/Api/DSRCourseProject.Api/Dockerfile
     depends_on:
       - dsr_translations_db
       - dsr_translations_redis

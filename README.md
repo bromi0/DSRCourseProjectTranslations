@@ -1,1 +1,1 @@
-# DsrCourseProjectTranslations
+# DSRCourseProjectTranslations
