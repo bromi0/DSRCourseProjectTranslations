@@ -44,10 +44,7 @@ app.UseAppHealthChecks();
 
 app.UseAppControllerAndViews();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseAppSwagger();
-}
+app.UseAppSwagger();
 
 
 app.Run();
