@@ -1,0 +1,18 @@
+version: '3.4'
+
+services:
+
+  dsr_translations_db:
+    image: postgres:14.1
+
+  dsr_translations_redis:
+    image: redis
+
+  dsr_translations_api:
+    image: ${DOCKER_REGISTRY-}dsrcourseprojectapi
+    build:
+      context: .
+      dockerfile: Systems/Api/DsrCourseProject.Api/Dockerfile
+    depends_on:
+      - dsr_translations_db
+      - dsr_translations_redis
