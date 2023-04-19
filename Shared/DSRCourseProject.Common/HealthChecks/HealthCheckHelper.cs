@@ -19,8 +19,9 @@ public static class HealthCheckHelper
             {
                 Status = x.Value.Status.ToString(),
                 Component = x.Key,
-                Description = x.Value.Description ?? "",
+                Description = (x.Value.Description ?? "") + $" Msg: {x.Value.Exception?.Message ?? ""}",
                 Duration = x.Value.Duration.TotalSeconds.ToString("0:0.00")
+                
             }),
 
         };
