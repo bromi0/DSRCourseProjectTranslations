@@ -12,8 +12,18 @@ var services = builder.Services;
 // Add services to the container.
 
 services.AddDbContext<MainDbContext>(
-       options => options.UseSqlServer(
-           builder.Configuration.GetConnectionString("MainContext")));
+       options =>
+       {
+           var connstring = builder.Configuration.GetConnectionString("MainContext") ?? "";
+           if (connstring.Contains("port", StringComparison.OrdinalIgnoreCase))
+           {
+               options.UseNpgsql(connstring);
+           } else
+           {
+            options.UseSqlServer(connstring);
+           }
+               
+       });
 
 // Logging
 
