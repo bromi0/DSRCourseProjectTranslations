@@ -1,4 +1,4 @@
-﻿namespace DsrCourseProjectTranslations.Data.Entities
+﻿namespace DSRCourseProjectTranslations.Data.Entities
 {
     /// <summary>
     /// Every Request for translation can have some tags, to make searching for them easier.

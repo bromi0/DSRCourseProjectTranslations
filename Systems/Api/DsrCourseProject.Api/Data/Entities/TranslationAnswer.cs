@@ -1,4 +1,4 @@
-﻿namespace DsrCourseProjectTranslations.Data.Entities
+﻿namespace DSRCourseProjectTranslations.Data.Entities
 {
     public class TranslationAnswer : BaseEntity
     {

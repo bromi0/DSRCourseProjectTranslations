@@ -2,7 +2,7 @@ using DSRCourseProject.Api;
 using DSRCourseProject.Api.Configuration;
 using DSRCourseProject.Services.Settings;
 using DSRCourseProject.Settings;
-using DsrCourseProjectTranslations.Data;
+using DSRCourseProjectTranslations.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,4 @@
-﻿namespace DsrCourseProjectTranslations.Data.Entities
+﻿namespace DSRCourseProjectTranslations.Data.Entities
 {
     /// <summary>
     /// Language, entity to use as source and target in the Request

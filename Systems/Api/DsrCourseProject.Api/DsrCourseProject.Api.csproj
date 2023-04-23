@@ -50,7 +50,7 @@
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Settings\DSRCourseProject.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Settings\DSRCourseProject.Settings.csproj" />
-    <ProjectReference Include="..\DsrCourseProject.Api.Settings\DSRCourseProject.Api.Settings.csproj" />
+    <ProjectReference Include="..\DSRCourseProject.Api.Settings\DSRCourseProject.Api.Settings.csproj" />
   </ItemGroup>
 
   <ItemGroup>

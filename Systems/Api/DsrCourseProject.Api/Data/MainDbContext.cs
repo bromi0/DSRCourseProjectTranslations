@@ -1,7 +1,7 @@
-﻿using DsrCourseProjectTranslations.Data.Entities;
+﻿using DSRCourseProjectTranslations.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace DsrCourseProjectTranslations.Data
+namespace DSRCourseProjectTranslations.Data
 {
     public class MainDbContext : DbContext
     {

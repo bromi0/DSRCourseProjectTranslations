@@ -1,9 +1,9 @@
-﻿using DsrCourseProjectTranslations.Data;
-using DsrCourseProjectTranslations.Data.Entities;
+﻿using DSRCourseProjectTranslations.Data;
+using DSRCourseProjectTranslations.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DsrCourseProjectTranslations.Controllers
+namespace DSRCourseProjectTranslations.Controllers
 {
     [Route("v{version:apiVersion}/[controller]")]
     [ApiController]
