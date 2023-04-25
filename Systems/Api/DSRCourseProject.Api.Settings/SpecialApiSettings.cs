@@ -2,5 +2,5 @@
 
 public class ApiSpecialSettings
 {
-    public string HelloMessage { get; private set; }
+    public string? HelloMessage { get; private set; }
 }

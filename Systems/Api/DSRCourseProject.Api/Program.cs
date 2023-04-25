@@ -2,6 +2,7 @@ using DSRCourseProject.Api;
 using DSRCourseProject.Api.Configuration;
 using DSRCourseProject.Services.Settings;
 using DSRCourseProject.Settings;
+using DSRCourseProject.Context;
 using DSRCourseProjectTranslations.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,19 +12,20 @@ var services = builder.Services;
 
 // Add services to the container.
 
-services.AddDbContext<MainDbContext>(
-       options =>
-       {
-           var connstring = builder.Configuration.GetConnectionString("MainContext") ?? "";
-           if (connstring.Contains("port", StringComparison.OrdinalIgnoreCase))
-           {
-               options.UseNpgsql(connstring);
-           } else
-           {
-            options.UseSqlServer(connstring);
-           }
+
+//services.AddDbContext<MainDbContext>(
+//       options =>
+//       {
+//           var connstring = builder.Configuration.GetConnectionString("MainContext") ?? "";
+//           if (connstring.Contains("port", StringComparison.OrdinalIgnoreCase))
+//           {
+//               options.UseNpgsql(connstring);
+//           } else
+//           {
+//            options.UseSqlServer(connstring);
+//           }
                
-       });
+//       });
 
 // Logging
 
@@ -31,8 +33,11 @@ builder.AddAppLogger();
 
 services.AddHttpContextAccessor();
 services.AddAppCors();
-services.AddAppHealthChecks(builder.Configuration);
 
+services.AddAppDbContext();
+
+
+services.AddAppHealthChecks(builder.Configuration);
 services.AddAppVersioning();
 
 // Swagger

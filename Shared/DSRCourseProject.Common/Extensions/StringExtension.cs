@@ -18,7 +18,7 @@ public static class StringExtension
         return string.IsNullOrWhiteSpace(data);
     }
 
-    public static string ToTitleCase(this string text)
+    public static string? ToTitleCase(this string text)
     {
         if (text == null)
             return null;

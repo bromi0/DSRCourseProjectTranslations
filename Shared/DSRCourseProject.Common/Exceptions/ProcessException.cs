@@ -10,12 +10,12 @@ public class ProcessException : Exception
     /// <summary>
     ///Error code
     /// </summary>
-    public string Code { get; }
+    public string? Code { get; }
 
     /// <summary>
     /// Error name
     /// </summary>
-    public string Name { get; }
+    public string? Name { get; }
 
     #region Constructors
 
