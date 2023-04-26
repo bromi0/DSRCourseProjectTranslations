@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Context.MigrationsMSSQL", "Data\Migrations\DSRCourseProject.Context.MigrationsMSSQL\DSRCourseProject.Context.MigrationsMSSQL.csproj", "{1C153813-A60A-4704-BA1E-3256AEBBF278}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Context.MigrationsPostgreSQL", "Data\Migrations\DSRCourseProject.Context.MigrationsPostgreSQL\DSRCourseProject.Context.MigrationsPostgreSQL.csproj", "{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +99,7 @@ Global
 		{9D1896BD-168F-4490-8C69-208056946B7A} = {0E08D125-881A-494B-B61D-4AA73939474A}
 		{D43D458E-2BCA-42B2-A207-B7B4F5FA42F9} = {0E08D125-881A-494B-B61D-4AA73939474A}
 		{1C153813-A60A-4704-BA1E-3256AEBBF278} = {D43D458E-2BCA-42B2-A207-B7B4F5FA42F9}
+		{77B7C404-36BD-478F-9F7F-F14A1DB8B8A3} = {D43D458E-2BCA-42B2-A207-B7B4F5FA42F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9684AE61-1CB6-400A-9CCD-157BB6173E40}
