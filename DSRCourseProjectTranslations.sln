@@ -27,9 +27,13 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0E08D125-881A-494B-B61D-4AA73939474A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Context", "Data\DSRCourseProject.Context\DSRCourseProject.Context.csproj", "{AA3F28E9-26E4-448F-BC0A-9E2C85886A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Context", "Data\DSRCourseProject.Context\DSRCourseProject.Context.csproj", "{AA3F28E9-26E4-448F-BC0A-9E2C85886A26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Context.Entities", "Data\DSRCourseProject.Context.Entities\DSRCourseProject.Context.Entities.csproj", "{9D1896BD-168F-4490-8C69-208056946B7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Context.Entities", "Data\DSRCourseProject.Context.Entities\DSRCourseProject.Context.Entities.csproj", "{9D1896BD-168F-4490-8C69-208056946B7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Migrations", "Migrations", "{D43D458E-2BCA-42B2-A207-B7B4F5FA42F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Context.MigrationsMSSQL", "Data\Migrations\DSRCourseProject.Context.MigrationsMSSQL\DSRCourseProject.Context.MigrationsMSSQL.csproj", "{1C153813-A60A-4704-BA1E-3256AEBBF278}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{9D1896BD-168F-4490-8C69-208056946B7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D1896BD-168F-4490-8C69-208056946B7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D1896BD-168F-4490-8C69-208056946B7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C153813-A60A-4704-BA1E-3256AEBBF278}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +91,8 @@ Global
 		{9F9F8483-59BB-4F1D-AA58-D8B56737DA05} = {F10E9594-354E-4569-87A9-1F890BE13725}
 		{AA3F28E9-26E4-448F-BC0A-9E2C85886A26} = {0E08D125-881A-494B-B61D-4AA73939474A}
 		{9D1896BD-168F-4490-8C69-208056946B7A} = {0E08D125-881A-494B-B61D-4AA73939474A}
+		{D43D458E-2BCA-42B2-A207-B7B4F5FA42F9} = {0E08D125-881A-494B-B61D-4AA73939474A}
+		{1C153813-A60A-4704-BA1E-3256AEBBF278} = {D43D458E-2BCA-42B2-A207-B7B4F5FA42F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9684AE61-1CB6-400A-9CCD-157BB6173E40}

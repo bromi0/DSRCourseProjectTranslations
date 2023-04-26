@@ -15,10 +15,10 @@ COPY ["Systems/Api/DSRCourseProject.Api.Settings/DSRCourseProject.Api.Settings.c
 RUN dotnet restore "Systems/Api/DSRCourseProject.Api/DSRCourseProject.Api.csproj"
 COPY . .
 WORKDIR "/src/Systems/Api/DSRCourseProject.Api"
-RUN dotnet build "DSRCourseProject.Api.csproj" -c Release -o /app/build
+RUN dotnet build "DSRCourseProject.Api.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DSRCourseProject.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "DSRCourseProject.Api.csproj" -c Debug -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

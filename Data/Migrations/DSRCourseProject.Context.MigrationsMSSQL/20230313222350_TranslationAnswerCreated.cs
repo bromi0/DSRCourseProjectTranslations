@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace DSRCourseProjectTranslations.Migrations
+namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
 {
     /// <inheritdoc />
     public partial class TranslationAnswerCreated : Migration

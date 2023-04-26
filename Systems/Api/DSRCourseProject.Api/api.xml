@@ -71,46 +71,5 @@
             </summary>
             <param name="services">Services collection</param>
         </member>
-        <member name="T:DSRCourseProjectTranslations.Data.Entities.Language">
-            <summary>
-            Language, entity to use as source and target in the Request
-            </summary>
-        </member>
-        <member name="T:DSRCourseProjectTranslations.Data.Entities.Tag">
-            <summary>
-            Every Request for translation can have some tags, to make searching for them easier.
-            </summary>
-        </member>
-        <member name="T:DSRCourseProjectTranslations.Data.Entities.TranslationRequest">
-            <summary>
-            Request for the translation. Contains the links to source and target languages, 
-            the text of the request, and the link to the author (user).
-            Optional list of tags.
-            </summary>
-        </member>
-        <member name="T:DSRCourseProjectTranslations.Migrations.InitialCreate">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:DSRCourseProjectTranslations.Migrations.TranslationAnswerCreated">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.TranslationAnswerCreated.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.TranslationAnswerCreated.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:DSRCourseProjectTranslations.Migrations.TranslationAnswerCreated.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
     </members>
 </doc>

@@ -1,5 +1,5 @@
-﻿using DSRCourseProjectTranslations.Data;
-using DSRCourseProjectTranslations.Data.Entities;
+﻿using DSRCourseProject.Context;
+using DSRCourseProject.Context.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
