@@ -23,6 +23,10 @@
   <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
@@ -34,6 +38,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Data\DSRCourseProject.Context\DSRCourseProject.Context.csproj" />
+    <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsMSSQL\DSRCourseProject.Context.MigrationsMSSQL.csproj" />
+    <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsPostgreSQL\DSRCourseProject.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Settings\DSRCourseProject.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Settings\DSRCourseProject.Settings.csproj" />
