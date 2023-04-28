@@ -25,7 +25,7 @@ public static class DbContextOptionsFactory
                     bldr.UseSqlServer(connStr,
                         opts => opts
                                 .CommandTimeout((int)TimeSpan.FromMinutes(0.2).TotalSeconds)
-                                .MigrationsHistoryTable("_EFMigrationsHistory", "public")
+                                .MigrationsHistoryTable("_EFMigrationsHistory")
                                 .MigrationsAssembly($"{migrationProjectPrefix}{DbType.MSSQL}")
                         );
                     break;
