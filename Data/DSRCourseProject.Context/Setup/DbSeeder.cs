@@ -102,6 +102,7 @@ public static class DbSeeder
         {
            Value = "slang"
         });
+        context.SaveChanges();
 
         context.Translations.Add(new Entities.TranslationRequest()
         {
