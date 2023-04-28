@@ -8,23 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var services = builder.Services;
 
-// Add services to the container.
-
-
-//services.AddDbContext<MainDbContext>(
-//       options =>
-//       {
-//           var connstring = builder.Configuration.GetConnectionString("MainContext") ?? "";
-//           if (connstring.Contains("port", StringComparison.OrdinalIgnoreCase))
-//           {
-//               options.UseNpgsql(connstring);
-//           } else
-//           {
-//            options.UseSqlServer(connstring);
-//           }
-               
-//       });
-
 // Logging
 
 builder.AddAppLogger();
@@ -39,11 +22,13 @@ services.AddAppHealthChecks(builder.Configuration);
 services.AddAppVersioning();
 
 // Swagger
+services.AddAppSwagger(Settings.Load<MainSettings>("Main"), Settings.Load<SwaggerSettings>("Swagger"));
+services.AddAppAutoMappers();
+
 
 services.AddAppControllerAndViews();
 services.RegisterAppServices();
 
-services.AddAppSwagger(Settings.Load<MainSettings>("Main"), Settings.Load<SwaggerSettings>("Swagger"));
 
 
 

@@ -12,6 +12,7 @@ public static class ControllerAndViewsConfiguration
 		services
 			.AddControllers()
 			.AddNewtonsoftJson(options => options.SerializerSettings.SetDefaultSettings())
+			.AddValidator();
 			;
 
 		return services;
@@ -19,7 +20,7 @@ public static class ControllerAndViewsConfiguration
 
 	public static WebApplication UseAppControllerAndViews(this WebApplication app)
 	{
-		app.UseStaticFiles();
+		// app.UseStaticFiles();
 
 		app.MapRazorPages();
 		app.MapControllers();

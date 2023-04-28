@@ -2,6 +2,7 @@
 
 using DSRCourseProject.Api.Settings;
 using DSRCourseProject.Services.Settings;
+using DSRCourseProject.Services.Tags;
 using Microsoft.Extensions.DependencyInjection;
 
 public static class Bootstrapper
@@ -13,6 +14,7 @@ public static class Bootstrapper
             .AddSwaggerSettings()
             .AddIdentitySettings()
             .AddApiSpecialSettings()
+            .AddTagService()
             /*
             .AddBookService()
             .AddUserAccountService()

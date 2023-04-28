@@ -3,7 +3,7 @@ using DSRCourseProject.Context.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DSRCourseProjectTranslations.Controllers
+namespace DSRCourseProject.Controllers
 {
     [Route("v{version:apiVersion}/[controller]")]
     [ApiController]

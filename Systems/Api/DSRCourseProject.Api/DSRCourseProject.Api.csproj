@@ -22,6 +22,8 @@
 
   <ItemGroup>
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="6.0.2" />
+    <PackageReference Include="FluentValidation" Version="11.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -41,6 +43,7 @@
     <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsMSSQL\DSRCourseProject.Context.MigrationsMSSQL.csproj" />
     <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsPostgreSQL\DSRCourseProject.Context.MigrationsPostgreSQL.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Settings\DSRCourseProject.Services.Settings.csproj" />
+    <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Tags\DSRCourseProject.Services.Tags.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Settings\DSRCourseProject.Settings.csproj" />
     <ProjectReference Include="..\DSRCourseProject.Api.Settings\DSRCourseProject.Api.Settings.csproj" />

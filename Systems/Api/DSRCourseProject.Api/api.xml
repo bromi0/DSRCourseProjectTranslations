@@ -4,6 +4,17 @@
         <name>DSRCourseProject.Api</name>
     </assembly>
     <members>
+        <member name="T:DSRCourseProject.Api.Configuration.AutoMapperConfiguration">
+            <summary>
+            AutoMapper configuration
+            </summary>
+        </member>
+        <member name="M:DSRCourseProject.Api.Configuration.AutoMapperConfiguration.AddAppAutoMappers(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add automappers
+            </summary>
+            <param name="services">Services collection</param>
+        </member>
         <member name="T:DSRCourseProject.Api.Configuration.CorsConfiguration">
             <summary>
             CORS configuration
