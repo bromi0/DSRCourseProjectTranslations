@@ -45,6 +45,8 @@ services.RegisterAppServices();
 
 services.AddAppSwagger(Settings.Load<MainSettings>("Main"), Settings.Load<SwaggerSettings>("Swagger"));
 
+
+
 var app = builder.Build();
 
 
@@ -58,6 +60,9 @@ app.UseAppHealthChecks();
 app.UseAppControllerAndViews();
 
 app.UseAppSwagger();
+
+DbInitializer.Execute(app.Services);
+DbSeeder.Execute(app.Services, true, true);
 
 
 app.Run();

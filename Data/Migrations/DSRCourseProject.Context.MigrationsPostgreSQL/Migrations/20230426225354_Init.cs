@@ -1,12 +1,13 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
+namespace DSRCourseProject.Context.MigrationsPostgreSQL.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,10 +16,10 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
                 name: "languages",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(40)", maxLength: 40, nullable: false),
-                    Uid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "character varying(40)", maxLength: 40, nullable: false),
+                    Uid = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,10 +30,10 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
                 name: "tags",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Value = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    Uid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Value = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
+                    Uid = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -43,12 +44,12 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
                 name: "translations",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SourceLanguageId = table.Column<int>(type: "int", nullable: false),
-                    TargetLanguageId = table.Column<int>(type: "int", nullable: false),
-                    Uid = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Content = table.Column<string>(type: "text", nullable: false),
+                    SourceLanguageId = table.Column<int>(type: "integer", nullable: false),
+                    TargetLanguageId = table.Column<int>(type: "integer", nullable: false),
+                    Uid = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,11 +69,32 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "answers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Content = table.Column<string>(type: "text", nullable: false),
+                    TranslationRequestId = table.Column<int>(type: "integer", nullable: false),
+                    Uid = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_answers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_answers_translations_TranslationRequestId",
+                        column: x => x.TranslationRequestId,
+                        principalTable: "translations",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "request_tags",
                 columns: table => new
                 {
-                    TagsId = table.Column<int>(type: "int", nullable: false),
-                    TranslationsId = table.Column<int>(type: "int", nullable: false)
+                    TagsId = table.Column<int>(type: "integer", nullable: false),
+                    TranslationsId = table.Column<int>(type: "integer", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,6 +112,17 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_answers_TranslationRequestId",
+                table: "answers",
+                column: "TranslationRequestId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_answers_Uid",
+                table: "answers",
+                column: "Uid",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_languages_Name",
@@ -140,6 +173,9 @@ namespace DSRCourseProject.Context.MigrationsMSSQL.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "answers");
+
             migrationBuilder.DropTable(
                 name: "request_tags");
 
