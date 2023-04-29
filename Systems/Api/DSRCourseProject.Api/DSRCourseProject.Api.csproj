@@ -45,6 +45,7 @@
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Languages\DSRCourseProject.Services.Languages.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Settings\DSRCourseProject.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Tags\DSRCourseProject.Services.Tags.csproj" />
+    <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.TranslationRequests\DSRCourseProject.Services.TranslationRequests.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Settings\DSRCourseProject.Settings.csproj" />
     <ProjectReference Include="..\DSRCourseProject.Api.Settings\DSRCourseProject.Api.Settings.csproj" />

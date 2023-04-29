@@ -17,6 +17,7 @@ public static class Bootstrapper
             .AddApiSpecialSettings()
             .AddTagService()
             .AddLanguageService()
+            .AddTranslationRequestsService()
             /*            
             .AddUserAccountService()
             .AddCache()

@@ -125,6 +125,16 @@
             Tag Value
             </summary>
         </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.TranslationRequestResponse.Id">
+            <summary>
+            TranslationRequest Id
+            </summary>
+        </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.TranslationRequestResponse.Content">
+            <summary>
+            TranslationRequest Value
+            </summary>
+        </member>
         <member name="T:DSRCourseProject.API.Controllers.TagsController">
             <summary>
             Tags controller
@@ -147,6 +157,29 @@
             Get tags by Id
             </summary>
             <response code="200">TagResponse></response>
+        </member>
+        <member name="T:DSRCourseProject.API.Controllers.TranslationRequestsController">
+            <summary>
+            Translation requests controller
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="403">Forbidden</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.TranslationRequestsController.GetTranslationRequests(System.Int32,System.Int32)">
+            <summary>
+            Get Translation Requests
+            </summary>
+            <param name="offset">Offset to the first element</param>
+            <param name="limit">Count elements on the page</param>
+            <response code="200">List of TranslationRequestResponse</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.TranslationRequestsController.GetTranslationRequestById(System.Int32)">
+            <summary>
+            Get languages by Id
+            </summary>
+            <response code="200">TranslationRequestResponse></response>
         </member>
     </members>
 </doc>
