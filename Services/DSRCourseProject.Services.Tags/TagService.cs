@@ -13,19 +13,19 @@ public class TagService : ITagService
     private readonly IDbContextFactory<MainDbContext> contextFactory;
     private readonly IMapper mapper;    
     private readonly IModelValidator<AddTagModel> addTagModelValidator;
-//    private readonly IModelValidator<UpdateTagModel> updateTagModelValidator;
+    private readonly IModelValidator<UpdateTagModel> updateTagModelValidator;
 
     public TagService(
         IDbContextFactory<MainDbContext> contextFactory,
         IMapper mapper,
-        IModelValidator<AddTagModel> addTagModelValidator
-        //IModelValidator<UpdateTagModel> updateTagModelValidator
+        IModelValidator<AddTagModel> addTagModelValidator,
+        IModelValidator<UpdateTagModel> updateTagModelValidator
         )
     {
         this.contextFactory = contextFactory;
         this.mapper = mapper;
         this.addTagModelValidator = addTagModelValidator;
-        //this.updateTagModelValidator = updateTagModelValidator;
+        this.updateTagModelValidator = updateTagModelValidator;
     }
 
     public async Task<IEnumerable<TagModel>> GetTags(int offset = 0, int limit = 10)
@@ -58,7 +58,7 @@ public class TagService : ITagService
     }
     public async Task<TagModel> AddTag(AddTagModel model)
     {
-//        addTagModelValidator.Check(model);
+        addTagModelValidator.Check(model);
 
         using var context = await contextFactory.CreateDbContextAsync();
 
@@ -72,7 +72,7 @@ public class TagService : ITagService
 
     public async Task UpdateTag(int tagId, UpdateTagModel model)
     {
-//        updateTagModelValidator.Check(model);
+        updateTagModelValidator.Check(model);
 
         using var context = await contextFactory.CreateDbContextAsync();
 

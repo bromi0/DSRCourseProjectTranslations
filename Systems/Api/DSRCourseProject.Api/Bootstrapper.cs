@@ -16,7 +16,7 @@ public static class Bootstrapper
             .AddApiSpecialSettings()
             .AddTagService()
             /*
-            .AddBookService()
+            .AddTagService()
             .AddUserAccountService()
             .AddCache()
             .AddRabbitMq()

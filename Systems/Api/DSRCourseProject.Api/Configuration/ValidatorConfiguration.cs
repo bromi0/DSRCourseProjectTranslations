@@ -4,10 +4,10 @@ using DSRCourseProject.Common;
 using DSRCourseProject.Common.Helpers;
 using DSRCourseProject.Common.Responses;
 using DSRCourseProject.Common.Validator;
-using DSRCourseProject.Services.Tags;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Reflection;
 
 public static class ValidatorConfiguration
 {
@@ -39,6 +39,8 @@ public static class ValidatorConfiguration
              };
          });
 
+        //Assembly.Load("DSRCourseProject.Services.Tags");
+        //TODO builder.AddFluentValidationAutoValidation()
         builder.AddFluentValidation(fv =>
         {
             fv.DisableDataAnnotationsValidation = true;
@@ -48,8 +50,7 @@ public static class ValidatorConfiguration
 
         ValidatorsRegisterHelper.Register(builder.Services);
 
-        builder.Services.AddSingleton(typeof(IModelValidator<>), typeof(ModelValidator<>));
-        builder.Services.AddSingleton(typeof(IModelValidator<AddTagModel>), typeof(ModelValidator<AddTagModel>));        
+        builder.Services.AddSingleton(typeof(IModelValidator<>), typeof(ModelValidator<>));        
 
         return builder;
     }
