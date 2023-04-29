@@ -82,6 +82,39 @@
             </summary>
             <param name="services">Services collection</param>
         </member>
+        <member name="T:DSRCourseProject.API.Controllers.LanguagesController">
+            <summary>
+            Languages controller
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="403">Forbidden</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguages(System.Int32,System.Int32)">
+            <summary>
+            Get languages
+            </summary>
+            <param name="offset">Offset to the first element</param>
+            <param name="limit">Count elements on the page</param>
+            <response code="200">List of LanguageResponses</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguageById(System.Int32)">
+            <summary>
+            Get languages by Id
+            </summary>
+            <response code="200">LanguageResponse></response>
+        </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.LanguageResponse.Id">
+            <summary>
+            Language Id
+            </summary>
+        </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.LanguageResponse.Name">
+            <summary>
+            Language Value
+            </summary>
+        </member>
         <member name="P:DSRCourseProject.API.Controllers.Models.TagResponse.Id">
             <summary>
             Tag Id

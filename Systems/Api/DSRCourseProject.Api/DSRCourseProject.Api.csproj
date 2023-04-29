@@ -42,6 +42,7 @@
     <ProjectReference Include="..\..\..\Data\DSRCourseProject.Context\DSRCourseProject.Context.csproj" />
     <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsMSSQL\DSRCourseProject.Context.MigrationsMSSQL.csproj" />
     <ProjectReference Include="..\..\..\Data\Migrations\DSRCourseProject.Context.MigrationsPostgreSQL\DSRCourseProject.Context.MigrationsPostgreSQL.csproj" />
+    <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Languages\DSRCourseProject.Services.Languages.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Settings\DSRCourseProject.Services.Settings.csproj" />
     <ProjectReference Include="..\..\..\Services\DSRCourseProject.Services.Tags\DSRCourseProject.Services.Tags.csproj" />
     <ProjectReference Include="..\..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
