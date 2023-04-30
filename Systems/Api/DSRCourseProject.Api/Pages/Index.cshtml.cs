@@ -13,7 +13,7 @@ public class IndexModel : PageModel
     public bool OpenApiEnabled => true; //  settings.Enabled;
 
     [BindProperty]
-    public string Version => Assembly.GetExecutingAssembly().GetAssemblyVersion();
+    public string? Version => Assembly.GetExecutingAssembly().GetAssemblyVersion();
 
     [BindProperty]
     public string? HelloMessage => apiSettings.HelloMessage;

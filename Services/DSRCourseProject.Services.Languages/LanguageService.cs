@@ -82,7 +82,7 @@ public class LanguageService : ILanguageService
 
         language = mapper.Map(model, language);
 
-        context.Languages.Update(language);
+        context.Languages.Update(language!);
         context.SaveChanges();
     }
 

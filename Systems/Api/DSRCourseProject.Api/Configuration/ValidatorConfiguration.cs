@@ -38,8 +38,7 @@ public static class ValidatorConfiguration
                  return result;
              };
          });
-
-        //Assembly.Load("DSRCourseProject.Services.Tags");
+        
         //TODO builder.AddFluentValidationAutoValidation()
         builder.AddFluentValidation(fv =>
         {
