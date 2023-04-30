@@ -18,7 +18,7 @@ services.AddAppCors();
 services.AddAppDbContext(builder.Configuration);
 
 
-services.AddAppHealthChecks(builder.Configuration);
+services.AddAppHealthChecks();
 services.AddAppVersioning();
 
 // Swagger

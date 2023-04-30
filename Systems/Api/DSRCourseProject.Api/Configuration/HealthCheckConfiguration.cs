@@ -1,5 +1,6 @@
 ﻿namespace DSRCourseProject.Api.Configuration;
 
+using DSRCourseProject.Api.Configuration.HealthChecks;
 using DSRCourseProject.Common;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -9,12 +10,11 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 public static class HealthCheckConfiguration
 {
 
-    public static IServiceCollection AddAppHealthChecks(this IServiceCollection services, IConfiguration c)
+    public static IServiceCollection AddAppHealthChecks(this IServiceCollection services)
     {
         services.AddHealthChecks()
-            .AddCheck<SelfHealthCheck>("DSRCourseProject.API");
-
-        services.AddHealthChecks().AddSqlServer(c.GetConnectionString("MainContext") ?? "", null, "Sql Select 1");
+            .AddCheck<SelfHealthCheck>("DSRCourseProject.API")
+            .AddCheck<DatabaseHealthCheck>("DSRCourseProject.Database");
 
         return services;
     }
