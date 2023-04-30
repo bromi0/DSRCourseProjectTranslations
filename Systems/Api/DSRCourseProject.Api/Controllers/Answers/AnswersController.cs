@@ -3,9 +3,7 @@
 using AutoMapper;
 using DSRCourseProject.API.Controllers.Models;
 using DSRCourseProject.Common.Responses;
-using DSRCourseProject.Common.Security;
 using DSRCourseProject.Services.Answers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -41,7 +39,7 @@ public class AnswersController : ControllerBase
     /// <param name="offset">Offset to the first element</param>
     /// <param name="limit">Count elements on the page</param>
     /// <response code="200">List of AnswerResponses</response>
-    [ProducesResponseType(typeof(IEnumerable<AnswerResponse>), 200)]    
+    [ProducesResponseType(typeof(IEnumerable<AnswerResponse>), 200)]
     [HttpGet("")]
     public async Task<IEnumerable<AnswerResponse>> GetAnswers([FromQuery] int offset = 0, [FromQuery] int limit = 10)
     {
@@ -55,7 +53,7 @@ public class AnswersController : ControllerBase
     /// Get Answers by Id
     /// </summary>
     /// <response code="200">AnswerResponse></response>
-    [ProducesResponseType(typeof(AnswerResponse), 200)]    
+    [ProducesResponseType(typeof(AnswerResponse), 200)]
     [HttpGet("{id}")]
     public async Task<AnswerResponse> GetAnswerById([FromRoute] int id)
     {
@@ -65,7 +63,7 @@ public class AnswersController : ControllerBase
         return response;
     }
 
-    [HttpPost("")]    
+    [HttpPost("")]
     public async Task<AnswerResponse> AddAnswer([FromBody] AddAnswerRequest request)
     {
         var model = mapper.Map<AddAnswerModel>(request);
@@ -75,7 +73,7 @@ public class AnswersController : ControllerBase
         return response;
     }
 
-    [HttpPut("{id}")]    
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateAnswer([FromRoute] int id, [FromBody] UpdateAnswerRequest request)
     {
         var model = mapper.Map<UpdateAnswerModel>(request);
@@ -84,7 +82,7 @@ public class AnswersController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]    
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteAnswer([FromRoute] int id)
     {
         await AnswerService.DeleteAnswer(id);

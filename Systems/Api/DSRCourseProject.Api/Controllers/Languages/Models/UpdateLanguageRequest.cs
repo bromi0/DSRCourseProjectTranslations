@@ -6,7 +6,7 @@ using FluentValidation;
 
 public class UpdateLanguageRequest
 {
-    public string Name { get; set; } = string.Empty;    
+    public string Name { get; set; } = string.Empty;
 }
 
 public class UpdateLanguageRequestValidator : AbstractValidator<UpdateLanguageRequest>
@@ -23,6 +23,6 @@ public class UpdateLanguageRequestProfile : Profile
 {
     public UpdateLanguageRequestProfile()
     {
-        CreateMap<UpdateLanguageRequest, UpdateLanguageModel>();        
+        CreateMap<UpdateLanguageRequest, UpdateLanguageModel>();
     }
 }

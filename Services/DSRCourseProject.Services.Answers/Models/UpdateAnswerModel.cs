@@ -23,6 +23,6 @@ public class UpdateAnswerModelProfile : Profile
 {
     public UpdateAnswerModelProfile()
     {
-        CreateMap<UpdateAnswerModel, TranslationAnswer>();            
+        CreateMap<UpdateAnswerModel, TranslationAnswer>();
     }
 }

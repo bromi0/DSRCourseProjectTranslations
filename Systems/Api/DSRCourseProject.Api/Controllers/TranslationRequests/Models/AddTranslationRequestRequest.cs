@@ -29,7 +29,7 @@ public class AddTranslationRequestRequestProfile : Profile
 {
     public AddTranslationRequestRequestProfile()
     {
-        CreateMap<AddTranslationRequestRequest, AddTranslationRequestModel>();            
+        CreateMap<AddTranslationRequestRequest, AddTranslationRequestModel>();
     }
 }
 

@@ -3,9 +3,7 @@
 using AutoMapper;
 using DSRCourseProject.API.Controllers.Models;
 using DSRCourseProject.Common.Responses;
-using DSRCourseProject.Common.Security;
 using DSRCourseProject.Services.Languages;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -41,7 +39,7 @@ public class LanguagesController : ControllerBase
     /// <param name="offset">Offset to the first element</param>
     /// <param name="limit">Count elements on the page</param>
     /// <response code="200">List of LanguageResponses</response>
-    [ProducesResponseType(typeof(IEnumerable<LanguageResponse>), 200)]    
+    [ProducesResponseType(typeof(IEnumerable<LanguageResponse>), 200)]
     [HttpGet("")]
     public async Task<IEnumerable<LanguageResponse>> GetLanguages([FromQuery] int offset = 0, [FromQuery] int limit = 10)
     {
@@ -55,7 +53,7 @@ public class LanguagesController : ControllerBase
     /// Get languages by Id
     /// </summary>
     /// <response code="200">LanguageResponse></response>
-    [ProducesResponseType(typeof(LanguageResponse), 200)]    
+    [ProducesResponseType(typeof(LanguageResponse), 200)]
     [HttpGet("{id}")]
     public async Task<LanguageResponse> GetLanguageById([FromRoute] int id)
     {
@@ -65,7 +63,7 @@ public class LanguagesController : ControllerBase
         return response;
     }
 
-    [HttpPost("")]    
+    [HttpPost("")]
     public async Task<LanguageResponse> AddLanguage([FromBody] AddLanguageRequest request)
     {
         var model = mapper.Map<AddLanguageModel>(request);
@@ -75,7 +73,7 @@ public class LanguagesController : ControllerBase
         return response;
     }
 
-    [HttpPut("{id}")]    
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateLanguage([FromRoute] int id, [FromBody] UpdateLanguageRequest request)
     {
         var model = mapper.Map<UpdateLanguageModel>(request);
@@ -84,7 +82,7 @@ public class LanguagesController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]    
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteLanguage([FromRoute] int id)
     {
         await languageService.DeleteLanguage(id);

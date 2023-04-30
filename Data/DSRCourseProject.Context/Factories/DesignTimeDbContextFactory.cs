@@ -12,7 +12,7 @@ public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<MainDbCont
     {
         // var provider = (args?[0] ?? $"{DbType.MSSQL}").ToLower();
         var provider = (args?.Length > 0 ? args[0] : $"{DbType.MSSQL}").ToLower();
-        
+
 
         var configuration = new ConfigurationBuilder()
              .AddJsonFile("appsettings.context.json")

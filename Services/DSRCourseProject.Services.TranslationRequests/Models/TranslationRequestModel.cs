@@ -7,10 +7,10 @@ using DSRCourseProject.Services.Tags;
 
 public class TranslationRequestModel
 {
-    public int Id { get; set; }    
+    public int Id { get; set; }
     public string Content { get; set; } = string.Empty;
     public int SourceLanguageId { get; set; }
-    public string SourceLanguageName{ get; set; } = string.Empty;
+    public string SourceLanguageName { get; set; } = string.Empty;
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
     public ICollection<TagModel>? Tags { get; set; }

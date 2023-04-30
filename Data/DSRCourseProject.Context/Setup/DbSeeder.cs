@@ -1,6 +1,5 @@
 ﻿namespace DSRCourseProject.Context;
 
-using DSRCourseProject.Context.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

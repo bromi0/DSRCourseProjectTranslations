@@ -12,13 +12,13 @@ public class LanguageResponse
     /// <summary>
     /// Language Value
     /// </summary>
-    public string Name { get; set; } = string.Empty;    
+    public string Name { get; set; } = string.Empty;
 }
 
 public class LanguageResponseProfile : Profile
 {
     public LanguageResponseProfile()
     {
-        CreateMap<LanguageModel, LanguageResponse>();            
+        CreateMap<LanguageModel, LanguageResponse>();
     }
 }

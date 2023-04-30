@@ -1,8 +1,8 @@
 using DSRCourseProject.Api;
 using DSRCourseProject.Api.Configuration;
+using DSRCourseProject.Context;
 using DSRCourseProject.Services.Settings;
 using DSRCourseProject.Settings;
-using DSRCourseProject.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 

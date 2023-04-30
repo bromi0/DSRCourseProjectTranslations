@@ -6,11 +6,11 @@ using System.Linq;
 
 public static class AutoMappersRegisterHelper
 {
-	public static void Register(IServiceCollection services)
-	{
-		var assemblies = AppDomain.CurrentDomain.GetAssemblies()
-			.Where(s => s.FullName != null && s.FullName.ToLower().StartsWith("dsrcourseproject."));
+    public static void Register(IServiceCollection services)
+    {
+        var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+            .Where(s => s.FullName != null && s.FullName.ToLower().StartsWith("dsrcourseproject."));
 
-		services.AddAutoMapper(assemblies);
-	}
+        services.AddAutoMapper(assemblies);
+    }
 }

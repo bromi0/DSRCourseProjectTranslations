@@ -8,10 +8,10 @@ using DSRCourseProject.Context.Entities;
 using Microsoft.EntityFrameworkCore;
 
 public class LanguageService : ILanguageService
-{    
+{
 
     private readonly IDbContextFactory<MainDbContext> contextFactory;
-    private readonly IMapper mapper;    
+    private readonly IMapper mapper;
     private readonly IModelValidator<AddLanguageModel> addLanguageModelValidator;
     private readonly IModelValidator<UpdateLanguageModel> updateLanguageModelValidator;
 
@@ -34,14 +34,14 @@ public class LanguageService : ILanguageService
         using var context = await contextFactory.CreateDbContextAsync();
 
         var languages = context
-            .Languages            
+            .Languages
             .AsQueryable();
 
         languages = languages
             .Skip(Math.Max(offset, 0))
             .Take(Math.Max(0, Math.Min(limit, 1000)));
 
-        var data = (await languages.ToListAsync()).Select(language => mapper.Map<LanguageModel>(language));        
+        var data = (await languages.ToListAsync()).Select(language => mapper.Map<LanguageModel>(language));
 
         return data;
     }
@@ -65,7 +65,7 @@ public class LanguageService : ILanguageService
         var language = mapper.Map<Language>(model);
         await context.Languages.AddAsync(language);
         context.SaveChanges();
-        
+
 
         return mapper.Map<LanguageModel>(language);
     }

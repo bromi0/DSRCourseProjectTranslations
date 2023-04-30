@@ -13,7 +13,7 @@ public class AnswerResponse
     /// Answer Content
     /// </summary>
     /// 
-    public string Content { get; set; } = string.Empty;    
+    public string Content { get; set; } = string.Empty;
     public int TranslationRequestId { get; set; }
 }
 
@@ -21,6 +21,6 @@ public class AnswerResponseProfile : Profile
 {
     public AnswerResponseProfile()
     {
-        CreateMap<AnswerModel, AnswerResponse>();            
+        CreateMap<AnswerModel, AnswerResponse>();
     }
 }

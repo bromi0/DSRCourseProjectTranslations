@@ -6,7 +6,7 @@ using FluentValidation;
 
 public class UpdateLanguageModel
 {
-    public string Name{ get; set; } = string.Empty;    
+    public string Name { get; set; } = string.Empty;
 }
 
 public class UpdateLanguageModelValidator : AbstractValidator<UpdateLanguageModel>
@@ -15,7 +15,7 @@ public class UpdateLanguageModelValidator : AbstractValidator<UpdateLanguageMode
     {
         RuleFor(x => x.Name)
             .NotEmpty().WithMessage("Name is required.")
-            .MaximumLength(40).WithMessage("Name is too long.");        
+            .MaximumLength(40).WithMessage("Name is too long.");
     }
 }
 
@@ -23,6 +23,6 @@ public class UpdateLanguageModelProfile : Profile
 {
     public UpdateLanguageModelProfile()
     {
-        CreateMap<UpdateLanguageModel, Language>();            
+        CreateMap<UpdateLanguageModel, Language>();
     }
 }

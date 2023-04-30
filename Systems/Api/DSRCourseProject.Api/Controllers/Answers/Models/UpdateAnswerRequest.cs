@@ -6,7 +6,7 @@ using FluentValidation;
 
 public class UpdateAnswerRequest
 {
-    public string Content { get; set; } = string.Empty;    
+    public string Content { get; set; } = string.Empty;
 }
 
 public class UpdateAnswerRequestValidator : AbstractValidator<UpdateAnswerRequest>
@@ -14,7 +14,7 @@ public class UpdateAnswerRequestValidator : AbstractValidator<UpdateAnswerReques
     public UpdateAnswerRequestValidator()
     {
         RuleFor(x => x.Content)
-            .NotEmpty().WithMessage("Content is required.");          
+            .NotEmpty().WithMessage("Content is required.");
     }
 }
 
@@ -22,6 +22,6 @@ public class UpdateAnswerRequestProfile : Profile
 {
     public UpdateAnswerRequestProfile()
     {
-        CreateMap<UpdateAnswerRequest, UpdateAnswerModel>();        
+        CreateMap<UpdateAnswerRequest, UpdateAnswerModel>();
     }
 }

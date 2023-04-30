@@ -8,10 +8,10 @@ using DSRCourseProject.Context.Entities;
 using Microsoft.EntityFrameworkCore;
 
 public class TagService : ITagService
-{    
+{
 
     private readonly IDbContextFactory<MainDbContext> contextFactory;
-    private readonly IMapper mapper;    
+    private readonly IMapper mapper;
     private readonly IModelValidator<AddTagModel> addTagModelValidator;
     private readonly IModelValidator<UpdateTagModel> updateTagModelValidator;
 
@@ -34,14 +34,14 @@ public class TagService : ITagService
         using var context = await contextFactory.CreateDbContextAsync();
 
         var tags = context
-            .Tags            
+            .Tags
             .AsQueryable();
 
         tags = tags
             .Skip(Math.Max(offset, 0))
             .Take(Math.Max(0, Math.Min(limit, 1000)));
 
-        var data = (await tags.ToListAsync()).Select(tag => mapper.Map<TagModel>(tag));        
+        var data = (await tags.ToListAsync()).Select(tag => mapper.Map<TagModel>(tag));
 
         return data;
     }
@@ -65,7 +65,7 @@ public class TagService : ITagService
         var tag = mapper.Map<Tag>(model);
         await context.Tags.AddAsync(tag);
         context.SaveChanges();
-        
+
 
         return mapper.Map<TagModel>(tag);
     }

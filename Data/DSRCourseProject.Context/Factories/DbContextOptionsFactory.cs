@@ -37,10 +37,10 @@ public static class DbContextOptionsFactory
                                 .MigrationsHistoryTable("_EFMigrationsHistory", "public")
                                 .MigrationsAssembly($"{migrationProjectPrefix}{DbType.PostgreSQL}")
                         );
-                    break;                
+                    break;
 
             }
-            
+
 
             bldr.EnableSensitiveDataLogging();
             //bldr.UseLazyLoadingProxies();

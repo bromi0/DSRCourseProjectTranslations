@@ -4,27 +4,27 @@ using DSRCourseProject.Common;
 
 public static class ControllerAndViewsConfiguration
 {
-	public static IServiceCollection AddAppControllerAndViews(this IServiceCollection services)
-	{
-		services
-			.AddRazorPages();
+    public static IServiceCollection AddAppControllerAndViews(this IServiceCollection services)
+    {
+        services
+            .AddRazorPages();
 
-		services
-			.AddControllers()
-			.AddNewtonsoftJson(options => options.SerializerSettings.SetDefaultSettings())
-			.AddValidator();
-			;
+        services
+            .AddControllers()
+            .AddNewtonsoftJson(options => options.SerializerSettings.SetDefaultSettings())
+            .AddValidator();
+        ;
 
-		return services;
-	}
+        return services;
+    }
 
-	public static WebApplication UseAppControllerAndViews(this WebApplication app)
-	{
-		app.UseStaticFiles();
+    public static WebApplication UseAppControllerAndViews(this WebApplication app)
+    {
+        app.UseStaticFiles();
 
-		app.MapRazorPages();
-		app.MapControllers();
+        app.MapRazorPages();
+        app.MapControllers();
 
-		return app;
-	}
+        return app;
+    }
 }

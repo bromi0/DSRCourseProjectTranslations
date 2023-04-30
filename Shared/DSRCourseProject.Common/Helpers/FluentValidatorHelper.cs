@@ -16,7 +16,8 @@ public static class ValidatorsRegisterHelper
                              i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IValidator<>))
                          let matchingInterface = genericInterfaces.FirstOrDefault()
                          where matchingInterface != null
-                         select new {
+                         select new
+                         {
                              InterfaceType = matchingInterface,
                              ValidatorType = type
                          };

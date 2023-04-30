@@ -3,9 +3,7 @@
 using AutoMapper;
 using DSRCourseProject.API.Controllers.Models;
 using DSRCourseProject.Common.Responses;
-using DSRCourseProject.Common.Security;
 using DSRCourseProject.Services.TranslationRequests;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -41,7 +39,7 @@ public class TranslationRequestsController : ControllerBase
     /// <param name="offset">Offset to the first element</param>
     /// <param name="limit">Count elements on the page</param>
     /// <response code="200">List of TranslationRequestResponse</response>
-    [ProducesResponseType(typeof(IEnumerable<TranslationRequestResponse>), 200)]    
+    [ProducesResponseType(typeof(IEnumerable<TranslationRequestResponse>), 200)]
     [HttpGet("")]
     public async Task<IEnumerable<TranslationRequestResponse>> GetTranslationRequests([FromQuery] int offset = 0, [FromQuery] int limit = 10)
     {
@@ -55,7 +53,7 @@ public class TranslationRequestsController : ControllerBase
     /// Get Translation Requests by Id, with tags and answers.
     /// </summary>
     /// <response code="200">TranslationRequestResponse></response>
-    [ProducesResponseType(typeof(TranslationRequestResponse), 200)]    
+    [ProducesResponseType(typeof(TranslationRequestResponse), 200)]
     [HttpGet("{id}")]
     public async Task<TranslationRequestResponse> GetTranslationRequestById([FromRoute] int id)
     {
@@ -65,7 +63,7 @@ public class TranslationRequestsController : ControllerBase
         return response;
     }
 
-    [HttpPost("")]    
+    [HttpPost("")]
     public async Task<TranslationRequestResponse> AddTranslationRequest([FromBody] AddTranslationRequestRequest request)
     {
         var model = mapper.Map<AddTranslationRequestModel>(request);
@@ -75,7 +73,7 @@ public class TranslationRequestsController : ControllerBase
         return response;
     }
 
-    [HttpPut("{id}")]    
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateTranslationRequest([FromRoute] int id, [FromBody] UpdateTranslationRequestRequest request)
     {
         var model = mapper.Map<UpdateTranslationRequestModel>(request);
@@ -84,7 +82,7 @@ public class TranslationRequestsController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]    
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTranslationRequest([FromRoute] int id)
     {
         await translationsService.DeleteTranslationRequest(id);

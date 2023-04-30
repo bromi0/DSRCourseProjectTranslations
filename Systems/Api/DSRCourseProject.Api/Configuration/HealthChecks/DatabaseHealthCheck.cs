@@ -26,7 +26,7 @@ namespace DSRCourseProject.Api.Configuration.HealthChecks
             catch (Exception ex)
             {
                 return HealthCheckResult.Unhealthy(ex.Message);
-            }            
+            }
         }
     }
 }

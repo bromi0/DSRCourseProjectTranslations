@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace DSRCourseProject.Context
-{ 
+{
     public class MainDbContext : DbContext
     {
         public DbSet<Language> Languages { get; set; }

@@ -29,6 +29,6 @@ public class UpdateTranslationRequestRequestProfile : Profile
 {
     public UpdateTranslationRequestRequestProfile()
     {
-        CreateMap<UpdateTranslationRequestRequest, UpdateTranslationRequestModel>();        
+        CreateMap<UpdateTranslationRequestRequest, UpdateTranslationRequestModel>();
     }
 }

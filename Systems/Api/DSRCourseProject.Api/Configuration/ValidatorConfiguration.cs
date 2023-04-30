@@ -7,7 +7,6 @@ using DSRCourseProject.Common.Validator;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using System.Reflection;
 
 public static class ValidatorConfiguration
 {
@@ -38,7 +37,7 @@ public static class ValidatorConfiguration
                  return result;
              };
          });
-        
+
         //TODO builder.AddFluentValidationAutoValidation()
         builder.AddFluentValidation(fv =>
         {
@@ -49,7 +48,7 @@ public static class ValidatorConfiguration
 
         ValidatorsRegisterHelper.Register(builder.Services);
 
-        builder.Services.AddSingleton(typeof(IModelValidator<>), typeof(ModelValidator<>));        
+        builder.Services.AddSingleton(typeof(IModelValidator<>), typeof(ModelValidator<>));
 
         return builder;
     }

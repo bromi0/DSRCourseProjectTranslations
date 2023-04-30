@@ -6,7 +6,7 @@ using FluentValidation;
 
 public class UpdateTagRequest
 {
-    public string Value { get; set; } = string.Empty;    
+    public string Value { get; set; } = string.Empty;
 }
 
 public class UpdateTagRequestValidator : AbstractValidator<UpdateTagRequest>
@@ -23,6 +23,6 @@ public class UpdateTagRequestProfile : Profile
 {
     public UpdateTagRequestProfile()
     {
-        CreateMap<UpdateTagRequest, UpdateTagModel>();                  
+        CreateMap<UpdateTagRequest, UpdateTagModel>();
     }
 }

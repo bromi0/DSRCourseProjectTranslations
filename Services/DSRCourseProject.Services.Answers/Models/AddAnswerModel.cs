@@ -5,7 +5,7 @@ using DSRCourseProject.Context.Entities;
 using FluentValidation;
 
 public class AddAnswerModel
-{    
+{
     public string Content { get; set; } = string.Empty;
     public int TranslationRequestId { get; set; }
 }
@@ -25,6 +25,6 @@ public class AddAnswerModelProfile : Profile
 {
     public AddAnswerModelProfile()
     {
-        CreateMap<AddAnswerModel, TranslationAnswer>();        
+        CreateMap<AddAnswerModel, TranslationAnswer>();
     }
 }

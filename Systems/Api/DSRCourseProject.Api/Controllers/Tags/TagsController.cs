@@ -3,9 +3,7 @@
 using AutoMapper;
 using DSRCourseProject.API.Controllers.Models;
 using DSRCourseProject.Common.Responses;
-using DSRCourseProject.Common.Security;
 using DSRCourseProject.Services.Tags;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -41,7 +39,7 @@ public class TagsController : ControllerBase
     /// <param name="offset">Offset to the first element</param>
     /// <param name="limit">Count elements on the page</param>
     /// <response code="200">List of TagResponses</response>
-    [ProducesResponseType(typeof(IEnumerable<TagResponse>), 200)]    
+    [ProducesResponseType(typeof(IEnumerable<TagResponse>), 200)]
     [HttpGet("")]
     public async Task<IEnumerable<TagResponse>> GetTags([FromQuery] int offset = 0, [FromQuery] int limit = 10)
     {
@@ -55,7 +53,7 @@ public class TagsController : ControllerBase
     /// Get tags by Id
     /// </summary>
     /// <response code="200">TagResponse></response>
-    [ProducesResponseType(typeof(TagResponse), 200)]    
+    [ProducesResponseType(typeof(TagResponse), 200)]
     [HttpGet("{id}")]
     public async Task<TagResponse> GetTagById([FromRoute] int id)
     {
@@ -65,7 +63,7 @@ public class TagsController : ControllerBase
         return response;
     }
 
-    [HttpPost("")]    
+    [HttpPost("")]
     public async Task<TagResponse> AddTag([FromBody] AddTagRequest request)
     {
         var model = mapper.Map<AddTagModel>(request);
@@ -75,7 +73,7 @@ public class TagsController : ControllerBase
         return response;
     }
 
-    [HttpPut("{id}")]    
+    [HttpPut("{id}")]
     public async Task<IActionResult> UpdateTag([FromRoute] int id, [FromBody] UpdateTagRequest request)
     {
         var model = mapper.Map<UpdateTagModel>(request);
@@ -84,7 +82,7 @@ public class TagsController : ControllerBase
         return Ok();
     }
 
-    [HttpDelete("{id}")]    
+    [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteTag([FromRoute] int id)
     {
         await tagService.DeleteTag(id);

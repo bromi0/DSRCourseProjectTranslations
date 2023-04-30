@@ -4,11 +4,6 @@ using DSRCourseProject.Common.Validator;
 using DSRCourseProject.Context;
 using DSRCourseProject.Context.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DSRCourseProject.Services.Answers
 {
@@ -55,7 +50,7 @@ namespace DSRCourseProject.Services.Answers
 
             var data = mapper.Map<AnswerModel>(a);
 
-            return data;            
+            return data;
         }
 
         public async Task<AnswerModel> AddAnswer(AddAnswerModel model)
@@ -68,7 +63,7 @@ namespace DSRCourseProject.Services.Answers
             await context.Answers.AddAsync(answer);
             context.SaveChanges();
 
-            return mapper.Map<AnswerModel>(answer);            
+            return mapper.Map<AnswerModel>(answer);
         }
 
         public async Task DeleteAnswer(int id)
@@ -95,7 +90,7 @@ namespace DSRCourseProject.Services.Answers
             answer = mapper.Map(model, answer);
 
             context.Answers.Update(answer!);
-            context.SaveChanges();            
+            context.SaveChanges();
         }
     }
 }

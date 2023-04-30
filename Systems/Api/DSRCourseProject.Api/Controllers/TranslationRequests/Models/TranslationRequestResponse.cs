@@ -18,13 +18,13 @@ public class TranslationRequestResponse
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
     public ICollection<TagResponse>? Tags { get; set; }
-    public ICollection<AnswerResponse>? Answers { get; set;}
+    public ICollection<AnswerResponse>? Answers { get; set; }
 }
 
 public class TranslationRequestResponseProfile : Profile
 {
     public TranslationRequestResponseProfile()
     {
-        CreateMap<TranslationRequestModel, TranslationRequestResponse>();            
+        CreateMap<TranslationRequestModel, TranslationRequestResponse>();
     }
 }

@@ -12,13 +12,13 @@ public class TagResponse
     /// <summary>
     /// Tag Value
     /// </summary>
-    public string Value { get; set; } = string.Empty;    
+    public string Value { get; set; } = string.Empty;
 }
 
 public class TagResponseProfile : Profile
 {
     public TagResponseProfile()
     {
-        CreateMap<TagModel, TagResponse>();            
+        CreateMap<TagModel, TagResponse>();
     }
 }
