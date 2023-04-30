@@ -2,6 +2,7 @@
 
 using AutoMapper;
 using DSRCourseProject.Context.Entities;
+using DSRCourseProject.Services.Tags;
 using FluentValidation;
 
 public class UpdateTranslationRequestModel
@@ -9,6 +10,7 @@ public class UpdateTranslationRequestModel
     public string Content { get; set; } = string.Empty;
     public int SourceLanguageId { get; set; }
     public int TargetLanguageId { get; set; }
+    public ICollection<UpdateTagModel>? Tags { get; set; }
 }
 
 public class UpdateTranslationRequestModelValidator : AbstractValidator<UpdateTranslationRequestModel>
@@ -28,6 +30,7 @@ public class UpdateTranslationRequestModelProfile : Profile
 {
     public UpdateTranslationRequestModelProfile()
     {
-        CreateMap<UpdateTranslationRequestModel, TranslationRequest>();            
+        CreateMap<UpdateTranslationRequestModel, TranslationRequest>()
+            .ForMember(dest => dest.Tags, opt => opt.Ignore());
     }
 }

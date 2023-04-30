@@ -9,6 +9,7 @@ public class AddTranslationRequestRequest
     public string Content { get; set; } = string.Empty;
     public int SourceLanguageId { get; set; }
     public int TargetLanguageId { get; set; }
+    public ICollection<AddTagRequest>? Tags { get; set; }
 }
 
 public class AddTranslationRequestResponseValidator : AbstractValidator<AddTranslationRequestRequest>

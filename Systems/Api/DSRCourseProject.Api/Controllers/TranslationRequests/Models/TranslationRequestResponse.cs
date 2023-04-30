@@ -17,6 +17,7 @@ public class TranslationRequestResponse
     public string SourceLanguageName { get; set; } = string.Empty;
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
+    public ICollection<TagResponse>? Tags { get; set; }
 }
 
 public class TranslationRequestResponseProfile : Profile

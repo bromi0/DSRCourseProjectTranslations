@@ -19,7 +19,6 @@ public class TagResponseProfile : Profile
 {
     public TagResponseProfile()
     {
-        CreateMap<TagModel, TagResponse>()
-            .ForMember(d => d.Value, a => a.MapFrom(s => s.Value));
+        CreateMap<TagModel, TagResponse>();            
     }
 }

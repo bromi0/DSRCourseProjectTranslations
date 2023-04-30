@@ -2,6 +2,7 @@
 
 using AutoMapper;
 using DSRCourseProject.Context.Entities;
+using DSRCourseProject.Services.Tags;
 
 public class TranslationRequestModel
 {
@@ -11,6 +12,7 @@ public class TranslationRequestModel
     public string SourceLanguageName{ get; set; } = string.Empty;
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
+    public ICollection<TagModel>? Tags { get; set; }
 }
 
 public class TranslationRequestModelProfile : Profile

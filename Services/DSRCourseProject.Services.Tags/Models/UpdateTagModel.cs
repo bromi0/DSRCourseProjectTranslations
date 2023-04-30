@@ -23,7 +23,6 @@ public class UpdateTagModelProfile : Profile
 {
     public UpdateTagModelProfile()
     {
-        CreateMap<UpdateTagModel, Tag>()
-            .ForMember(d => d.Value, a => a.MapFrom(s => s.Value));
+        CreateMap<UpdateTagModel, Tag>();            
     }
 }

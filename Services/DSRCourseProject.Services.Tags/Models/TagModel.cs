@@ -14,7 +14,6 @@ public class TagModelProfile : Profile
 {
     public TagModelProfile()
     {
-        CreateMap<Tag, TagModel>()
-            .ForMember(dest => dest.Value, opt => opt.MapFrom(src => src.Value));            
+        CreateMap<Tag, TagModel>();           
     }
 }

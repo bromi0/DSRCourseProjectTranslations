@@ -23,7 +23,6 @@ public class AddTagModelProfile : Profile
 {
     public AddTagModelProfile()
     {
-        CreateMap<AddTagModel, Tag>()
-            .ForMember(d => d.Value, a => a.MapFrom(s => s.Value));
+        CreateMap<AddTagModel, Tag>();        
     }
 }

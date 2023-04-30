@@ -2,13 +2,16 @@
 
 using AutoMapper;
 using DSRCourseProject.Context.Entities;
+using DSRCourseProject.Services.Tags;
 using FluentValidation;
 
 public class AddTranslationRequestModel
 {
     public string Content { get; set; } = string.Empty;
     public int SourceLanguageId { get; set; }    
-    public int TargetLanguageId { get; set; }    
+    public int TargetLanguageId { get; set; }
+    public List<AddTagModel> Tags { get; set; } = new List<AddTagModel>();
+
 }
 
 public class AddTranslationRequestModelValidator : AbstractValidator<AddTranslationRequestModel>
