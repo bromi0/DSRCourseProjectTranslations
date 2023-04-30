@@ -1,5 +1,6 @@
 ﻿namespace DSRCourseProject.Context;
 
+using DSRCourseProject.Context.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -80,7 +81,7 @@ public static class DbSeeder
 
         var l2 = new Entities.Language()
         {
-            Name = "Russian",                        
+            Name = "Russian",
         };
         context.Languages.Add(l2);
 
@@ -92,15 +93,15 @@ public static class DbSeeder
 
         context.Tags.Add(new Entities.Tag()
         {
-            Value = "science"            
+            Value = "science"
         });
         context.Tags.Add(new Entities.Tag()
         {
-           Value = "joke"
+            Value = "joke"
         });
         context.Tags.Add(new Entities.Tag()
         {
-           Value = "slang"
+            Value = "slang"
         });
         context.SaveChanges();
 
@@ -122,13 +123,26 @@ public static class DbSeeder
             TargetLanguage = l2
         });
 
-        context.Translations.Add(new Entities.TranslationRequest()
+        var t3 = new Entities.TranslationRequest()
         {
             Content = "Шляпа",
-            Tags = context.Tags.Where(t => t.Value.Equals("slang")).ToList(),
+            Tags = context.Tags.Where(t => t.Value.Equals("slang") || t.Value.Equals("Joke")).ToList(),
             SourceLanguage = l3,
             TargetLanguage = l1
-        });     
+        };
+        context.Translations.Add(t3);
+        var r1 = new Entities.TranslationAnswer()
+        {
+            Content = "Failure",
+            Request = t3
+        };
+        context.Answers.Add(r1);
+        var r2 = new Entities.TranslationAnswer()
+        {
+            Content = "A hat",
+            Request = t3
+        };
+        context.Answers.Add(r2);
 
         context.SaveChanges();
     }

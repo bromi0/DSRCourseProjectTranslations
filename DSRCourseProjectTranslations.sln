@@ -39,9 +39,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Context.Mi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Services.Tags", "Services\DSRCourseProject.Services.Tags\DSRCourseProject.Services.Tags.csproj", "{A5E381D8-3C9A-44DC-A5CB-EAD9F7BA91BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Services.Languages", "Services\DSRCourseProject.Services.Languages\DSRCourseProject.Services.Languages.csproj", "{D8C3E6A5-844D-490C-994C-8C860937E28E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Services.Languages", "Services\DSRCourseProject.Services.Languages\DSRCourseProject.Services.Languages.csproj", "{D8C3E6A5-844D-490C-994C-8C860937E28E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSRCourseProject.Services.TranslationRequests", "Services\DSRCourseProject.Services.TranslationRequests\DSRCourseProject.Services.TranslationRequests.csproj", "{DE18FF41-851E-4231-BF16-D69A5245C425}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Services.TranslationRequests", "Services\DSRCourseProject.Services.TranslationRequests\DSRCourseProject.Services.TranslationRequests.csproj", "{DE18FF41-851E-4231-BF16-D69A5245C425}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSRCourseProject.Services.Answers", "Services\DSRCourseProject.Services.Answers\DSRCourseProject.Services.Answers.csproj", "{88409041-650F-4431-ADF6-92276B136C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -101,6 +103,10 @@ Global
 		{DE18FF41-851E-4231-BF16-D69A5245C425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE18FF41-851E-4231-BF16-D69A5245C425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE18FF41-851E-4231-BF16-D69A5245C425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88409041-650F-4431-ADF6-92276B136C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88409041-650F-4431-ADF6-92276B136C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88409041-650F-4431-ADF6-92276B136C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88409041-650F-4431-ADF6-92276B136C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -121,6 +127,7 @@ Global
 		{A5E381D8-3C9A-44DC-A5CB-EAD9F7BA91BC} = {F10E9594-354E-4569-87A9-1F890BE13725}
 		{D8C3E6A5-844D-490C-994C-8C860937E28E} = {F10E9594-354E-4569-87A9-1F890BE13725}
 		{DE18FF41-851E-4231-BF16-D69A5245C425} = {F10E9594-354E-4569-87A9-1F890BE13725}
+		{88409041-650F-4431-ADF6-92276B136C09} = {F10E9594-354E-4569-87A9-1F890BE13725}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9684AE61-1CB6-400A-9CCD-157BB6173E40}

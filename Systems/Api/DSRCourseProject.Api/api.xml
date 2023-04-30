@@ -82,28 +82,39 @@
             </summary>
             <param name="services">Services collection</param>
         </member>
-        <member name="T:DSRCourseProject.API.Controllers.LanguagesController">
+        <member name="T:DSRCourseProject.API.Controllers.AnswersController">
             <summary>
-            Languages controller
+            Answers controller
             </summary>
             <response code="400">Bad Request</response>
             <response code="401">Unauthorized</response>
             <response code="403">Forbidden</response>
             <response code="404">Not Found</response>
         </member>
-        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguages(System.Int32,System.Int32)">
+        <member name="M:DSRCourseProject.API.Controllers.AnswersController.GetAnswers(System.Int32,System.Int32)">
             <summary>
-            Get languages
+            Get Answers
             </summary>
             <param name="offset">Offset to the first element</param>
             <param name="limit">Count elements on the page</param>
-            <response code="200">List of LanguageResponses</response>
+            <response code="200">List of AnswerResponses</response>
         </member>
-        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguageById(System.Int32)">
+        <member name="M:DSRCourseProject.API.Controllers.AnswersController.GetAnswerById(System.Int32)">
             <summary>
-            Get languages by Id
+            Get Answers by Id
             </summary>
-            <response code="200">LanguageResponse></response>
+            <response code="200">AnswerResponse></response>
+        </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.AnswerResponse.Id">
+            <summary>
+            Answer Id
+            </summary>
+        </member>
+        <member name="P:DSRCourseProject.API.Controllers.Models.AnswerResponse.Content">
+            <summary>
+            Answer Content
+            </summary>
+            
         </member>
         <member name="P:DSRCourseProject.API.Controllers.Models.LanguageResponse.Id">
             <summary>
@@ -132,8 +143,31 @@
         </member>
         <member name="P:DSRCourseProject.API.Controllers.Models.TranslationRequestResponse.Content">
             <summary>
-            TranslationRequest Value
+            TranslationRequest Content
             </summary>
+        </member>
+        <member name="T:DSRCourseProject.API.Controllers.LanguagesController">
+            <summary>
+            Languages controller
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized</response>
+            <response code="403">Forbidden</response>
+            <response code="404">Not Found</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguages(System.Int32,System.Int32)">
+            <summary>
+            Get languages
+            </summary>
+            <param name="offset">Offset to the first element</param>
+            <param name="limit">Count elements on the page</param>
+            <response code="200">List of LanguageResponses</response>
+        </member>
+        <member name="M:DSRCourseProject.API.Controllers.LanguagesController.GetLanguageById(System.Int32)">
+            <summary>
+            Get languages by Id
+            </summary>
+            <response code="200">LanguageResponse></response>
         </member>
         <member name="T:DSRCourseProject.API.Controllers.TagsController">
             <summary>
@@ -169,7 +203,7 @@
         </member>
         <member name="M:DSRCourseProject.API.Controllers.TranslationRequestsController.GetTranslationRequests(System.Int32,System.Int32)">
             <summary>
-            Get Translation Requests
+            Get Translation Requests with tags, but without answers.
             </summary>
             <param name="offset">Offset to the first element</param>
             <param name="limit">Count elements on the page</param>
@@ -177,7 +211,7 @@
         </member>
         <member name="M:DSRCourseProject.API.Controllers.TranslationRequestsController.GetTranslationRequestById(System.Int32)">
             <summary>
-            Get languages by Id
+            Get Translation Requests by Id, with tags and answers.
             </summary>
             <response code="200">TranslationRequestResponse></response>
         </member>

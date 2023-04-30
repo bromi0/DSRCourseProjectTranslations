@@ -18,6 +18,7 @@ public static class Bootstrapper
             .AddTagService()
             .AddLanguageService()
             .AddTranslationRequestsService()
+            .AddAnswerService()
             /*            
             .AddUserAccountService()
             .AddCache()

@@ -10,7 +10,7 @@ public class TranslationRequestResponse
     /// </summary>
     public int Id { get; set; }
     /// <summary>
-    /// TranslationRequest Value
+    /// TranslationRequest Content
     /// </summary>
     public string Content { get; set; } = string.Empty;
     public int SourceLanguageId { get; set; }
@@ -18,6 +18,7 @@ public class TranslationRequestResponse
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
     public ICollection<TagResponse>? Tags { get; set; }
+    public ICollection<AnswerResponse>? Answers { get; set;}
 }
 
 public class TranslationRequestResponseProfile : Profile

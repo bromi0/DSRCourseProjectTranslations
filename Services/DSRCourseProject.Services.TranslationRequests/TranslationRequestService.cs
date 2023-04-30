@@ -9,10 +9,10 @@ using DSRCourseProject.Services.TranslationRequests;
 using Microsoft.EntityFrameworkCore;
 
 public class TranslationRequestService : ITranslationRequestService
-{    
+{
 
     private readonly IDbContextFactory<MainDbContext> contextFactory;
-    private readonly IMapper mapper;    
+    private readonly IMapper mapper;
     private readonly IModelValidator<AddTranslationRequestModel> addValidator;
     private readonly IModelValidator<UpdateTranslationRequestModel> updateValidator;
 
@@ -29,6 +29,12 @@ public class TranslationRequestService : ITranslationRequestService
         this.updateValidator = updateValidator;
     }
 
+    /// <summary>
+    /// Returns all translation requests, with tags, but without answers.
+    /// </summary>
+    /// <param name="offset"></param>
+    /// <param name="limit"></param>
+    /// <returns></returns>
     public async Task<IEnumerable<TranslationRequestModel>> GetTranslationRequests(int offset = 0, int limit = 10)
     {
 
@@ -37,19 +43,23 @@ public class TranslationRequestService : ITranslationRequestService
         var translations = context
             .Translations
             .Include(x => x.SourceLanguage)
-            .Include(x=>x.TargetLanguage)
-            .Include(x=>x.Tags)
+            .Include(x => x.TargetLanguage)
+            .Include(x => x.Tags)
             .AsQueryable();
 
         translations = translations
             .Skip(Math.Max(offset, 0))
             .Take(Math.Max(0, Math.Min(limit, 1000)));
 
-        var data = (await translations.ToListAsync()).Select(tr => mapper.Map<TranslationRequestModel>(tr));        
+        var data = (await translations.ToListAsync()).Select(tr => mapper.Map<TranslationRequestModel>(tr));
 
         return data;
     }
-
+    /// <summary>
+    /// Returns a translation request with tags and answers.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     public async Task<TranslationRequestModel> GetTranslationRequest(int id)
     {
         using var context = await contextFactory.CreateDbContextAsync();
@@ -57,14 +67,15 @@ public class TranslationRequestService : ITranslationRequestService
         var tr = await context.Translations
             .Include(x => x.SourceLanguage)
             .Include(x => x.TargetLanguage)
-            .Include(x=>x.Tags)
+            .Include(x => x.Tags)
+            .Include(x => x.Answers)
             .FirstOrDefaultAsync(x => x.Id.Equals(id));
 
         var data = mapper.Map<TranslationRequestModel>(tr);
 
         return data;
     }
-    
+
     /// <summary>
     /// Creates a new translation request. If you supply a bunch of tags,
     /// verifies them against the database and creates new ones if they don't exist yet.
@@ -81,7 +92,7 @@ public class TranslationRequestService : ITranslationRequestService
         var composedTags = new List<Tag>();
         // Iterate over each tag in the request model and check if it already exists in the database
         foreach (var tag in model.Tags)
-        {            
+        {
             var existingTag = await context.Tags.SingleOrDefaultAsync(t => t.Value == tag.Value);
 
             if (existingTag == null)
@@ -101,7 +112,7 @@ public class TranslationRequestService : ITranslationRequestService
 
         await context.Translations.AddAsync(tr);
         context.SaveChanges();
-       
+
         return mapper.Map<TranslationRequestModel>(tr);
     }
 
@@ -119,7 +130,7 @@ public class TranslationRequestService : ITranslationRequestService
 
         var tr = await context.Translations
             .Include(x => x.SourceLanguage)
-            .Include(x => x.TargetLanguage)            
+            .Include(x => x.TargetLanguage)
             .Include(x => x.Tags)
             .FirstOrDefaultAsync(x => x.Id.Equals(id));
 
@@ -150,7 +161,7 @@ public class TranslationRequestService : ITranslationRequestService
                 }
             }
         }
-        
+
         tr = mapper.Map(model, tr);
 
         context.Translations.Update(tr);

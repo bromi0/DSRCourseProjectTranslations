@@ -10,8 +10,6 @@
     <ProjectReference Include="..\..\Data\DSRCourseProject.Context.Entities\DSRCourseProject.Context.Entities.csproj" />
     <ProjectReference Include="..\..\Data\DSRCourseProject.Context\DSRCourseProject.Context.csproj" />
     <ProjectReference Include="..\..\Shared\DSRCourseProject.Common\DSRCourseProject.Common.csproj" />
-    <ProjectReference Include="..\DSRCourseProject.Services.Answers\DSRCourseProject.Services.Answers.csproj" />
-    <ProjectReference Include="..\DSRCourseProject.Services.Tags\DSRCourseProject.Services.Tags.csproj" />
   </ItemGroup>
 
 </Project>

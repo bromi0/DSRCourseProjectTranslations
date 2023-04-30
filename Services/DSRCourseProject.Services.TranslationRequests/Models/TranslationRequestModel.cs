@@ -2,6 +2,7 @@
 
 using AutoMapper;
 using DSRCourseProject.Context.Entities;
+using DSRCourseProject.Services.Answers;
 using DSRCourseProject.Services.Tags;
 
 public class TranslationRequestModel
@@ -13,6 +14,7 @@ public class TranslationRequestModel
     public int TargetLanguageId { get; set; }
     public string TargetLanguageName { get; set; } = string.Empty;
     public ICollection<TagModel>? Tags { get; set; }
+    public ICollection<AnswerModel>? Answers { get; set; }
 }
 
 public class TranslationRequestModelProfile : Profile

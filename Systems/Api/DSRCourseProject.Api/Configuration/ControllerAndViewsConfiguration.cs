@@ -20,7 +20,7 @@ public static class ControllerAndViewsConfiguration
 
 	public static WebApplication UseAppControllerAndViews(this WebApplication app)
 	{
-		// app.UseStaticFiles();
+		app.UseStaticFiles();
 
 		app.MapRazorPages();
 		app.MapControllers();

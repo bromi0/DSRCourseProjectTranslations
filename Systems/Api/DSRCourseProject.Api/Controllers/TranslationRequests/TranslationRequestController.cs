@@ -4,7 +4,6 @@ using AutoMapper;
 using DSRCourseProject.API.Controllers.Models;
 using DSRCourseProject.Common.Responses;
 using DSRCourseProject.Common.Security;
-using DSRCourseProject.Services.Languages;
 using DSRCourseProject.Services.TranslationRequests;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -37,7 +36,7 @@ public class TranslationRequestsController : ControllerBase
 
 
     /// <summary>
-    /// Get Translation Requests
+    /// Get Translation Requests with tags, but without answers.
     /// </summary>
     /// <param name="offset">Offset to the first element</param>
     /// <param name="limit">Count elements on the page</param>
@@ -53,7 +52,7 @@ public class TranslationRequestsController : ControllerBase
     }
 
     /// <summary>
-    /// Get languages by Id
+    /// Get Translation Requests by Id, with tags and answers.
     /// </summary>
     /// <response code="200">TranslationRequestResponse></response>
     [ProducesResponseType(typeof(TranslationRequestResponse), 200)]    
