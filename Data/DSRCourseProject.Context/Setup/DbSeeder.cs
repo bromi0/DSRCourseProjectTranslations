@@ -62,10 +62,10 @@ public static class DbSeeder
 
     private static async Task ConfigureDemoData(IServiceProvider serviceProvider)
     {
-        await AddLanguages(serviceProvider);
+        await Filldata(serviceProvider);
     }
 
-    private static async Task AddLanguages(IServiceProvider serviceProvider)
+    private static async Task Filldata(IServiceProvider serviceProvider)
     {
         await using var context = DbContext(serviceProvider);
 
