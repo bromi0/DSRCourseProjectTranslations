@@ -1,6 +1,6 @@
-﻿namespace DSRCourseProject.Services.Tags;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
-using Microsoft.Extensions.DependencyInjection;
+using DSRCourseProject.Services.Tags;
 
 public static class Bootstrapper
 {

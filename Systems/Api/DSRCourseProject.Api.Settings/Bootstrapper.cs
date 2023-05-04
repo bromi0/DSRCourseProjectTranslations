@@ -1,8 +1,8 @@
-﻿namespace DSRCourseProject.Api.Settings;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
+using DSRCourseProject.Api.Settings;
 using DSRCourseProject.Settings;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 public static class Bootstrapper
 {

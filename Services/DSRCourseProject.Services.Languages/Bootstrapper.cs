@@ -1,6 +1,6 @@
-﻿namespace DSRCourseProject.Services.Languages;
+﻿namespace Microsoft.Extensions.DependencyInjection;
 
-using Microsoft.Extensions.DependencyInjection;
+using DSRCourseProject.Services.Languages;
 
 public static class Bootstrapper
 {
